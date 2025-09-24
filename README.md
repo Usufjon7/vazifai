@@ -1,18 +1,93 @@
-# Массив як объект аст, ки арзишҳоро (ҳар навъ) нигоҳ медорад, на дар шакли хусусиятҳо/калидҳои номгузорӣ шуда, балки дар ҷойҳои рақамгузории индексдор.
+#      Array Callbacks
+  #  1. find() 
+  Ҷустуҷӯ мекунад ва аввалин элементи массивро, ки шартро қонеъ мекунад, бармегардонад.
+  ```js
+   function task4(arr) {
+   return arr.find((elem) => {
+     return elem>3
+   })
+ }
+ console.log(task4([1,2,3,4,5]));
+  
+  ```
 
-# Дар JavaScript, массив рӯйхати тартибдоди арзишҳо мебошад. Ҳар арзишро унвони элемент мегузоранд ва он бо индекс муайян карда мешавад. Аввалан, массив метавонад арзишҳои навъҳои омехта дошта бошад.
 
-# Массив як тағйирёбандаи махсус аст, ки метавонад беш аз як арзишро нигоҳ дорад:
+  #  2. forEach()
+  Барои ҳар элементи массив як функцияро иҷро мекунад, натиҷа намегардонад.
+   ```js
+   function task(arr) {
+     return arr.forEach((element, index, arr) => {
+          console.log(element, index, arr);
+         
+    })
+ }
+ console.log(task([1,2,3,4,5])); 
 
-# Шумо метавонед элементҳоро дар массив бо дастрасӣ ба арзиши индекс тағйир диҳед ё элементҳои нав илова кунед.
+  ```
+  #  3.  map()
+  Барои ҳар элементи массив функсияро иҷро карда, массиви навро бо натиҷаҳо бармегардонад.
+  ``` js
+function task1(arr) {
+   return arr.map((element) => {
+      return element/2
 
-# pop-az akibi massiv 1 adad udalit mekunad 
-# push-az akib dobavit mekunad
-# shift dob mekard az pesh
-# unshift udakitit mekardak az pesh
+     })
+ }
+ console.log(task1([1,2,3,4,5]));
+  ```
+  # 4. filter()
+Массиви навро бо элементҳое бармегардонад, ки шартро қонеъ мекунанд.
+```js
 
-# join rangi string kormekadak boz yagonchi ilova karda meshud
-# concat prosta du stringa mechastpondak
-# include index menavisondem rakamsha yo stringsha meburovard
-# indexof adada menavisondem rakamsha meburovard
-# toReversed rakama chapana mekard# vazifai
+ function task2(arr) {
+   return arr.filter((element) => {
+        return element!==0
+  })  
+ }
+  console.log(task2([1,2,3,4,5]));
+
+```
+#  5. toSorted()
+Массиви навро тартиб медиҳад, аммо массиви аслиро тағйир намедиҳад.
+```js
+ function task3(arr) {
+   return arr.toSorted((a,b) => a-b) 
+ }
+ console.log(task3([1,2,765,675,25]));
+
+```
+# 6. reduce()
+Барои ҷамъбаст кардани элементҳо бо функсияе, ки як арзиши ягона бармегардонад.
+```js
+
+ function task5(arr) {
+     return arr.reduce((a,b) =>{
+    return a*b
+     },1)
+ }
+ console.log(task5([1,2,3,4,5]));
+
+```
+# 7. some()
+Агар ҳадди ақалл як элемент шартро қонеъ кунад, бармегардонад true.
+```js
+    function task6(arr) {
+    return arr.some((elem)=>{
+        return elem%2==0
+     })
+ }
+ console.log(task6([1,2,3,4,5]));
+```
+# 8. every()
+Агар ҳамаи элементҳо шартро қонеъ кунанд, бармегардонад true.
+```js
+function task6(arr) {
+     return arr.every((elem)=>{
+         return elem%2==0
+     })
+ }
+ console.log(task6([1,2,3,4,5]));
+
+
+```
+# vazifas
